@@ -1,0 +1,57 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.shankephone.fdfs</groupId>
+	<artifactId>fdfs-client</artifactId>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>${project.build.sourceEncoding}</project.reporting.outputEncoding>
+		<maven.compiler.source>1.5</maven.compiler.source>
+		<maven.compiler.target>1.5</maven.compiler.target>
+		<maven-assembly-plugin.version>2.5.3</maven-assembly-plugin.version>
+		<maven-jar-plugin.version>2.6</maven-jar-plugin.version>
+		<maven-javadoc-plugin.version>2.10.2</maven-javadoc-plugin.version>
+		<maven-source-plugin.version>2.4</maven-source-plugin.version>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>${maven-jar-plugin.version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>${maven-source-plugin.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-javadoc-plugin</artifactId> 
+				<version>${maven-javadoc-plugin.version}</version> <executions> <execution> 
+				<goals> <goal>jar</goal> </goals> </execution> </executions> </plugin> -->
+		</plugins>
+	</build>
+	<distributionManagement>
+		<repository>
+			<id>nexus-shankephone</id>
+			<url>http://120.52.9.4:8081/content/repositories/shankephone-data-releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus-shankephone</id>
+			<url>http://120.52.9.4:8081/content/repositories/shankephone-data-snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+</project>
